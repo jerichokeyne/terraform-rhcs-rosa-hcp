@@ -59,7 +59,7 @@ data "aws_ami" "rhel9" {
 
   filter {
     name   = "manifest-location"
-    values = ["amazon/RHEL-9.*_HVM-*-x86_64-*-Hourly2-GP2"]
+    values = ["amazon/RHEL-9.*_HVM-*-x86_64-*-Hourly2-GP3"]
   }
 
   owners = ["309956199498"] # Amazon's "Official Red Hat" account

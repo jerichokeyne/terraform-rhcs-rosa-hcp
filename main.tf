@@ -145,8 +145,9 @@ module "rosa_cluster_hcp" {
 ######################################
 
 module "rhcs_hcp_machine_pool" {
-  source   = "./modules/machine-pool"
-  for_each = var.machine_pools
+  depends_on = [module.rhcs_hcp_kubelet_configs]
+  source     = "./modules/machine-pool"
+  for_each   = var.machine_pools
 
   cluster_id                   = module.rosa_cluster_hcp.cluster_id
   name                         = each.value.name
